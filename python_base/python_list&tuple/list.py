@@ -1,5 +1,6 @@
-# -*- utf-8 -*-
+# -*- coding: utf-8 -*-
 # Python 内置数据类型：list(列表)
+
 
 # 列表可直接赋值
 language = ['Python', 'Perl', 'Shell', 'Java']
@@ -48,6 +49,23 @@ print(class_02)
 print(class_02[1][0])
 
 # 列表元素为空值
-class_01 = []
+class_01 = [ ]
 print(len(class_01))
 
+motorcycles = []
+motorcycles.append('honda')
+motorcycles.append('yamaha')
+motorcycles.append('suzuki')
+
+print(motorcycles)
+# del 直接删除一个元素
+del motorcycles[1]
+print(motorcycles)
+
+motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
+print(motorcycles)
+
+# 方法remove() 删除列表元素'ducati'
+too_expensive = 'ducati'
+motorcycles.remove(too_expensive)
+print('The motorcycles' + too_expensive +'is too expensive!')

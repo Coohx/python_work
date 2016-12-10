@@ -29,21 +29,21 @@ tuple_03[2][1] = 'b'
 print(tuple_03)
 
 
-l = [
+it_home = [
     ['Apple', 'Google', 'Microsoft'],
     ['Java', 'Python', 'Ruby', 'PHP'],
     ['Adam', 'Bart', 'Lisa']
 ]
 
 # 打印Apple
-apple = l[0][0]
+apple = it_home[0][0]
 print(apple)
 # 打印Python
-python = l[1][1]
+python = it_home[1][1]
 print(python)
 # 打印Lisa
-name = l[2][2]
+name = it_home[2][2]
 print(name)
 # pop()最多一个参数
-print(l.pop(1))
-print(l)
+print(it_home.pop(1))
+print(it_home)
