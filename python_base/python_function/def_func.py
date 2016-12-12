@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 # Python 自定义函数
 
+# 导入math包,调用里面的数学函数
+import math
+
+
 # 自定义函数
 #   def 函数名(参数):
+#   """文档字符串(docstring)"""
 #       函数体(缩进块)
 #
 def my_abs(num):
+    """求绝对值"""      # 文档字符串，用于描述函数做什么
     if num >= 0:
         # return 返回函数结果，退出函数
         return num
@@ -21,6 +27,7 @@ print('abs(-5) = %d' % my_abs(-5))
 def nop():
     # pass相当于占位符，什么都不做，可以让函数先运行起来
     pass
+
 
 # pass 可以用于语句中
 num = 10
@@ -43,11 +50,10 @@ def my_abs(num):
 
 print(my_abs(-99))
 
-# 导入math包,调用里面的数学函数
-import math
 
-# angle = 0 顺带初始化angle
-def move(x, y, step, angle = 0):
+# angle = 0 默认参数
+def move(x, y, step, angle=0):
+    """求位移坐标"""
     nx = x + step * math.cos(angle)
     ny = y + step * math.sin(angle)
     # 函数值存到一个元组中进行返回
@@ -61,3 +67,14 @@ r = move(100, 100, 60, math.pi / 6)
 # r 直接输出多个值组成的元组
 print(r)
 
+ 
+def display_message():
+    """打印学习内容"""
+    print('I learned how to define a function!')
+display_message()
+
+
+def favorite_book(title):
+    """打印我最喜欢的书名"""
+    print('One of my favorite books is ' + title.title() + '.')
+favorite_book('Python Crash Course')

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 # Python 数据类型：tuple(元组)
 
-# tuple 一旦定义不能修改
+# tuple 一旦定义不能修改,是不可变对象
 classmates = ('Coohuang', 'Bob', 'Adam')
 print(classmates)
-# tuple 除了不能apped()、insert()之外，其他操作和list相同
+# 访问元组元素
 print(classmates[-1])
 print(len(classmates))
 
@@ -47,3 +47,18 @@ print(name)
 # pop()最多一个参数
 print(it_home.pop(1))
 print(it_home)
+
+# practices
+foods = ('mushroom', 'potato', 'cucumber', 'pizza', 'cheese')
+print('Here are the foods:')
+for food in foods:
+    print(food)
+# 元组元素不可修改
+# foods[1] = 'chocolate'
+
+# 可以重新给元组变量赋值
+foods = ('chocolate', 'mushroom', 'potato', 'cucumber', 'pizza')
+print('Here are the new foods:')
+for food in foods:
+    print(food)
+

@@ -9,11 +9,11 @@ print('abs(-99) =', absolute)
 maxmium = max(1, 2, 9, -8)
 print('max(1, 2, 9, -8) =', maxmium)
 
+
 # 数据类型转换函数
 
 # int()把其他数据类型转换为整形
 print('int(\'123\') =', int('123'))
-
 print('int(12.34) =', int(12.34))
 
 # float() 浮点数

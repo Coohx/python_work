@@ -13,11 +13,11 @@ print(count_language)
 # 使用索引引用列表元素，索引从0开始
 print(language[0])
 
-# 索引 -1 代表末尾的元素,一次向前递减
+# 索引 -1 代表末尾的元素,依次向前递减
 print(language[-1])
 print(language[-2])
 
-# 列表中元素类型可以不同，也可以是另一个列表
+# 列表中元素类型可以不同，也可以是一个列表对象
 class_01 = ['Python', 1000, True, 8.888]
 print(class_01)
 print(class_01[-1])
@@ -69,3 +69,47 @@ print(motorcycles)
 too_expensive = 'ducati'
 motorcycles.remove(too_expensive)
 print('The motorcycles' + too_expensive +'is too expensive!')
+
+# 列表中的元素没有任何关系，可以重复出现
+motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati', 'honda']
+print(motorcycles)
+motorcycles.remove('honda')
+print(motorcycles)
+
+# sort()对列表进行永久性排序:按字母顺序排序
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort()
+print(cars)
+# ['audi', 'bmw', 'subaru', 'toyota']
+
+# 按与字母顺序相反的方向排序
+cars.sort(reverse=True)
+print(cars)
+# ['toyota', 'subaru', 'bmw', 'audi']
+
+# 函数sorted() 对列表进行临时排序，不影响原始列表顺序
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+
+print('Here is the origin list:')
+print(cars)
+
+print('\nHere is the sorted list:')
+print(sorted(cars))
+
+print('\nHere is the origin list again:')
+print(cars)
+
+print('\nHere is the  reverse sorted list:')
+print(sorted(cars, reverse=True))
+# ['toyota', 'subaru', 'bmw', 'audi']
+
+# 反转列表元素
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(cars)
+
+cars.reverse()
+print(cars)
+# ['subaru', 'toyota', 'audi', 'bmw']
+# 再次调用reverse(),恢复原来的顺序
+cars.reverse()
+print(cars)

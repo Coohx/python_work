@@ -7,9 +7,7 @@ names = ['Coohx', 'Bob', 'Adan']
 for name in names:
     print(name)
 
-
-
-# range(n)函数生成0~n-1范围内的整数
+# range(n)函数生成0 ~ n-1范围内的整数
 sum_1 = 0
 for var in range(101):
     sum_1 = sum_1 + var
@@ -40,4 +38,3 @@ for var in range(101):
         break
     sum_1 = sum_1 + var
 print(sum_1)
-

@@ -10,7 +10,6 @@ if age >= 18:
 else:
     print('You should not stay here, Go home!')
 
-
 # if/elif/else 多值条件判断
 
 age = 3
@@ -30,7 +29,6 @@ elif age > 18:
 else:
     print('kid! Go home!')
 
-
 # if 支持简写
 tmp = 12
 if tmp:
@@ -38,7 +36,6 @@ if tmp:
 
 
 # input() 返回字符串, if进行数值判断时要转为整数
-
 age = int(input('Please enter your age: '))
 if age > 18:
     print('Welcome!')
