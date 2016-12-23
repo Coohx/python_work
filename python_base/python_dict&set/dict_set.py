@@ -4,10 +4,10 @@
 # 字典是一种 key:value 的数据组织方式
 
 score_dict = {
-              'Huangxin': 98,
-              'Linus': 99,
-              'Jobs': 92
-}
+    'Huangxin': 98,
+    'Linus': 99,
+    'Jobs': 92
+    }
 # 脱义字符具有相对性，当前字符是否需要转义，要和它前面的那个字符对比。
 print('score_dict[\'Huangxin\'] =', score_dict['Huangxin'])
 print('score_dict[\'Linus\'] =', score_dict['Linus'])
@@ -51,7 +51,7 @@ print(score_dict)
 print('\n\n')
 
 
-# 集合set类似字典，但只存储 key，没有对应的value，相当于存储普通元素
+# 集合set类似列表，但每个元素都是独一无二的
 
 # set()方法将一个列表初始化为集合
 num_set = set([1, 2, 3])
@@ -101,9 +101,10 @@ aa_tuple = (1, 2, a_list, 3)
 
 # 字典的 key 必须是不可变对象
 a_dict = {
-          'name': 'Qmihuang',
-          'gender': 'male',
-          a_tuple: [4, 5, 6]
-}
+    'name': 'Qmihuang',
+    'gender': 'male',
+    a_tuple: [4, 5, 6]
+    }
+
 print('a_dict["aa_tuple"] =',a_dict[a_tuple])
 

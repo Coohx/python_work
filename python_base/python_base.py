@@ -21,3 +21,22 @@ print(8 / 1)
 integer = 18829027464
 message = "The phone number of my is " + str(integer) + "."
 print(message)
+
+# input()
+message = input('Tell me something, and I will repeat it back to you: ')
+print(message)
+
+# 将较长的提示信息放在变量中
+prompt = 'If you tell us who you are, we can personalize the message you see.'
+# 追加一部分信息
+prompt += '\nWhat is your first name? '
+
+name = input(prompt)
+print('\nHello, ' + name + '!')
+
+
+age = input('How old are you? ')
+age = int(age)
+if age >= 18:
+    print('Welcome, Adult!')
+

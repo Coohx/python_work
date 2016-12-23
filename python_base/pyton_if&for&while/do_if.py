@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # if 语句进行条件判断
-# Python用冒号 : 组织缩进，后面是一个代码块，一次性执行完
+# Python用冒号(:)组织缩进，后面是一个代码块，一次性执行完
 
 # if/else 简单判断
-age = 20
+age = 17
 if age >= 18:
     print('you are a adult.')
     print('Welcome!')
@@ -65,3 +65,33 @@ elif bmi <= 32:
 else:
     status = '严重肥胖'
 print('Xiao Ming BMI is: %.2f,%s!' % (bmi, status))
+
+# 关键字in 
+requested_toppings = ['mushroom', 'onions', 'pineapple']
+print('mushroom' in requested_toppings)
+
+# if-elif 省略 else代码块
+age = 12
+price = 0
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+elif age < 65:
+    price = 10
+elif age >= 65:
+    price = 5
+
+print('Your admission cost is $' + str(price) + '.')
+
+# 多个并列的if，检查所有条件
+
+requested_toppings = ['mushrooms', 'extra cheese']
+if 'mushrooms' in requested_toppings:
+    print('Adding mushrooms.')
+if 'pepperoni' in requested_toppings:
+    print('Adding pepperoni.')
+if 'extra cheese' in requested_toppings:
+    print ('Adding extra pepperoni.')
+
+print('\nFinished making your pizza!')

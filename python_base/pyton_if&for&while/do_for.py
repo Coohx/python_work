@@ -13,13 +13,14 @@ for var in range(101):
     sum_1 = sum_1 + var
 print('0 + 1 + 2 + ... + 100 = %s' % sum_1)
 
+
 # 求100以内所有奇数的和
 sum_2 = 0
 num = 99
 # while 循环体
 while num > 0:
     sum_2 = sum_2 +num
-    num = num - 2
+    num  -= 2
 print('1 + 3 + 5 + ... + 99 = %s' % sum_2)
 
 # contunue 结束本次循环，进入下一次循环

@@ -4,12 +4,12 @@
 # 导入math包,调用里面的数学函数
 import math
 
-
-# 自定义函数
-#   def 函数名(参数):
-#   """文档字符串(docstring)"""
-#       函数体(缩进块)
-#
+r"""
+ 自定义函数
+   def 函数名(参数):
+   \"""文档字符串(docstring)\"""
+       函数体(缩进块)
+"""
 def my_abs(num):
     """求绝对值"""      # 文档字符串，用于描述函数做什么
     if num >= 0:
@@ -20,7 +20,7 @@ def my_abs(num):
         # 没有return语句时，函数返回'None'
         return num
 
-print('abs(-5) = %d' % my_abs(-5))
+print("abs(-5) = %d" % my_abs(-5))
 
 
 # 空函数  pass语句
@@ -70,11 +70,11 @@ print(r)
  
 def display_message():
     """打印学习内容"""
-    print('I learned how to define a function!')
+    print("I learned how to define a function!")
 display_message()
 
 
 def favorite_book(title):
     """打印我最喜欢的书名"""
-    print('One of my favorite books is ' + title.title() + '.')
+    print("One of my favorite books is " + title.title() + ".")
 favorite_book('Python Crash Course')

@@ -3,7 +3,7 @@
 def greet_users(names):
     """向列表中每位用户发出简单的问候"""
     for name in names:
-        msg = 'Hello, ' + name.title() + '!'
+        msg = "Hello, " + name.title() + "!"
         print(msg)
 
 usernames = ['hannah', 'coohx', 'margot']
@@ -21,12 +21,12 @@ def print_models(unprinted_designs, completed_models):
         current_design = unprinted_designs.pop()
         
         # 模拟3D模型打印过程
-        print('Printing model: ' + current_design)
+        print("Printing model: " + current_design)
         completed_models.append(current_design)
 
 def show_completed_models(completed_modles):
     """显示打印好的所有模型"""
-    print('\nThe following models have been printed:')
+    print("\nThe following models have been printed:")
     for complete_model in completed_models:
         print(complete_model)
 
@@ -44,7 +44,7 @@ show_completed_models(completed_models)
 # 列表已经被函数修改，输出为空列表
 # print(unprinted_designs)
 
-# 传递列表副本，不影响原始列表
+# 传递列表副本，不影响原始列表(切片实现)
 
 print_models(unprinted_designs[:], completed_models)
 show_completed_models(completed_models)

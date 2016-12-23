@@ -1,0 +1,3 @@
+In Python you can fly.
+In Python you can use string like a list.
+In Python you can define a class that simulate a real world easily.
