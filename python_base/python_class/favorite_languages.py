@@ -8,7 +8,6 @@ from random import randint
 
 # 利用OrderedDict类创建一个空的有序字典实例
 favorite_languages = OrderedDict()
-
 # 给有序字典赋值
 favorite_languages['jen'] = 'python'
 favorite_languages['sarah'] = 'c'
@@ -38,11 +37,8 @@ class Die():
         rand_side = randint(1, self.sides)
         print("The side is " + str(rand_side) + ".")
 
-
 # 6面骰子
 die_6 = Die()
 die_6.roll_die()
-
 # 10面骰子
-die_10 = Die(10)
-die_10.roll_die()
+die_10 = Die(10) die_10.roll_die()
