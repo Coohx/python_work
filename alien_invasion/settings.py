@@ -1,6 +1,6 @@
 r"""
 游戏设置模块
-    存储所有设置的类
+    存储所有设置类
 """
 class Settings():
     """存储《外星人入侵》的所有设置的类"""
@@ -13,5 +13,5 @@ class Settings():
         # 背景色，三基色值
         self.bg_color = (230, 230, 230)
         
-        # 飞船的设置
+        # 飞船的相关属性
         self.ship_speed_factor = 2.5
