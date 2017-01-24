@@ -9,7 +9,6 @@ import game_functions as gf
 
 def run_game():
     """运行游戏"""
-
     # 初始化背景设置
     pygame.init()
     # 创建设置的一个对象
@@ -28,13 +27,8 @@ def run_game():
         gf.check_events(ai_settings, screen, ship, bullets)
         # 检测到键盘事件后更新飞船的状态
         ship.update()
-        # 对编组中的每个子弹调用update()
-        bullets.update()
-        # 删除已消失的子弹
-        for bullet in bullets.copy():
-            if bullet.rect.bottom <= 0:
-                bullets.remove(bullet)
-        #print(len(bullets))
+        # 对编组中的每个子弹调用update(),删除已消失的子弹
+        gf.update_bullets(bullets)
         # 及时更新屏幕上的图像
         gf.update_screen(ai_settings, screen, ship, bullets)
 
