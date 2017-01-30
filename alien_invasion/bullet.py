@@ -17,6 +17,7 @@ class Bullet(Sprite):
             ai_settings.bullet_height)
         self.rect.centerx = ship.rect.centerx
         self.rect.top = ship.rect.top
+
         # self.rect.y 是子弹矩形左上角的y坐标
         # 存储用小数表示的子弹位置
         self.y = float( self.rect.y)
