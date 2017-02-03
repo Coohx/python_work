@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
+r"""
+模拟飞船的类
+"""
 import pygame
 
 class Ship():
@@ -58,4 +58,10 @@ class Ship():
     def blitme(self):
         """根据rect矩形对象在指定位置绘制飞船"""
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        """让飞船在屏幕底部居中"""
+        #self.center = self.screen_rect.centerx
+        self.rect.centerx = self.screen_rect.centerx
+        self.rect.bottom = self.screen_rect.bottom
 

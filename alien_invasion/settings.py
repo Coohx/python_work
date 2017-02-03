@@ -15,9 +15,10 @@ class Settings():
         
         # 飞船的相关属性
         self.ship_speed_factor = 2.5
+        self.ship_limit = 3
 
         # 子弹设置
-        self.bullet_speed_factor = 1.0
+        self.bullet_speed_factor = 3
         self.bullet_width = 3
         self.bullet_height = 10
         self.bullet_color = (60, 60, 60)
