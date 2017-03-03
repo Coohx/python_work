@@ -1,3 +1,9 @@
-<p>Learning Notes</p>
+<!-- 子模板的第一行必须指定它继承的父模板 -->
+{% extends "learning_notes/base.html" %}
 
-<p>Learning Notes helps you keep track of your learning, for any topic you're learning about.</p>
+<!-- 子模板只需包含当前网页特有的内容 -->
+{% block content %}
+  <p>
+    Learning Notes helps you keep track of your learning, for any topic you're learning about.
+  </p>
+{% endblock content %}

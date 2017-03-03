@@ -1,0 +1,8 @@
+<p>
+  <!-- 超链接到主页下 -->
+  <a href="{% url 'learning_notes:index' %}">Learning Note</a>
+  <a href="{% url 'learning_notes:topics' %}">Topics</a>
+</p>
+<!-- 块标签,块名content,是一个占位符! 包含的信息由子模板指定-->
+{% block content %}{% endblock content %}
+
