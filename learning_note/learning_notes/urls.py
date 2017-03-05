@@ -12,6 +12,9 @@ urlpatterns = [
     # name实参指定了这个URL模式的名称，以便能够在代码的其他地方引用它(index)
     url(r'^$', views.index, name='index'),
 
-    # “学习笔记”主题的URL模式
+    # 主题的URL模式
     url(r'^topics/$', views.topics, name='topics'),
+    # 某个主题的URL模式
+    # topic_id是一个实参,用于存储主题的id
+    url(r'^topics/(?P<topic_id>\d+)/$', views.topic, name='topic'),
 ]

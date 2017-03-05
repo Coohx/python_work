@@ -7,8 +7,10 @@
 
   <ul>
     {% for topic in topics %}
-    <!-- <li></li>项目列表项 -->
-      <li>{{ topic }}</li>
+      <!-- 将主题页面中的每个主题设置为超链接，连接到相应的主题网页 -->
+      <li>
+        <a href="{% url 'learning_notes:topic' topic.id %}">{{ topic }}</a>
+      </li>
     {% empty %}
       <li>No topics have been added yet.</li>
     {% endfor %}
