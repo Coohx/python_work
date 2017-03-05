@@ -22,5 +22,5 @@ urlpatterns = [
     # 模块admin.site.urls定义了管理网站的URL
     url(r'^admin/', admin.site.urls),
     # 添加应用程序learning_notes的URL
-    url(r'', include('learning_notes.urls'), name='learning_notes'),
+    url(r'', include('learning_notes.urls', namespace='learning_notes')),
 ]

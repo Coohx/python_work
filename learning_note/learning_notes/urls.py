@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
 
     # “学习笔记”主题的URL模式
-    url(r'^topics/&', views.topics, name='topics'),
+    url(r'^topics/$', views.topics, name='topics'),
 ]

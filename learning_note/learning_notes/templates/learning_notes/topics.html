@@ -1,16 +1,17 @@
 <!-- 继承父模板base.html-->
-{% extends "learning_notes/bsae.html" %}
+{% extends "learning_notes/base.html" %}
 
-{% block content  %}
-  
-  <p>Topics</p>
-  
-  <u>
+{% block content %}
+
+  <h3>Topics</h3>
+
+  <ul>
     {% for topic in topics %}
-      <li>{{ topic }]</li>
+    <!-- <li></li>项目列表项 -->
+      <li>{{ topic }}</li>
     {% empty %}
       <li>No topics have been added yet.</li>
-    {% end for %}
-  </u>
-
+    {% endfor %}
+  </ul>
+  
 {% endblock content %}
