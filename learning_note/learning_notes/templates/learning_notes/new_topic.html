@@ -1,0 +1,17 @@
+{% extends "learning_notes/base.html" %}
+
+{% block content %}
+  <h3>Add a new topic:</h3>
+  
+  <!-- 实参action指定了将提交的表单数据发送到视图函数new_topic\
+    实参method指定浏览器提交数据的请求方法POST-->
+  <form action="{% url 'learning_notes:new_topic' %}" method='post'>
+    <!-- 防止攻击者利用表单获得对服务器未经授权的访问，即跨站请求伪造-->
+    {% csrf_token %}
+    <!-- Django使用此模板变量自动显示表单所需的全部数据。修饰符as_p让Django\
+      以段落格式渲染所有表单元素-->
+    {{ form.as_p }}
+    <button name="Submit">添加主题</button>
+  </form>
+
+{% endblock content %}

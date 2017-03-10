@@ -21,7 +21,7 @@ class Entry(models.Model):
 
     class Meta:
         """在Entry类中嵌套类Meta"""
-        # 特殊属性，Django在需要时使用Entries来表示多个条目
+        # 特殊属性，Django在需要时使用Entries来表示多个条目,管理模型的额外信息
         verbose_name_plural = 'entries'
 
     def __str__(self):
