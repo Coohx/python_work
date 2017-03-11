@@ -10,6 +10,7 @@
       <!-- 将主题页面中的每个主题设置为超链接，连接到相应的主题页面 -->
       <li>
         <!-- 针对单个主题依次进行超链接 -->
+        <!-- 首次调用topic.id的入口-->
         <a href="{% url 'learning_notes:topic' topic.id %}">{{ topic }}</a>
       </li>
     {% empty %}
@@ -17,5 +18,5 @@
     {% endfor %}
   </ul>
   
-  <a href="{% url 'learning_notes:new_topic' %}">Add a new topic:</a>
+  <h3><a href="{% url 'learning_notes:new_topic' %}">Add a new topic:</a></h3>
 {% endblock content %}

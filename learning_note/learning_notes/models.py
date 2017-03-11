@@ -12,7 +12,7 @@ class Topic(models.Model):
         return self.text
 
 class Entry(models.Model):
-    """学习到的有关某个主题的具体知识"""
+    """学习到的有关某个主题的具体知识条目"""
     # 数据库外键，引用了表Topic中的一条记录，关联到特定的主题
     topic = models.ForeignKey(Topic)
     # TextField()字段不需要长度限制
@@ -20,8 +20,8 @@ class Entry(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        """在Entry类中嵌套类Meta"""
-        # 特殊属性，Django在需要时使用Entries来表示多个条目,管理模型的额外信息
+        """数据模型Entry的额外属性的元选项"""
+        # 指定条目标题的显示格式
         verbose_name_plural = 'entries'
 
     def __str__(self):
@@ -31,3 +31,4 @@ class Entry(models.Model):
             return self.text[:50] + "..."
         else:
             return self.text
+

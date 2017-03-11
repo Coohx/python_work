@@ -5,6 +5,11 @@
   <h3>Topic: {{ topic }}</h3>
 
   <h4>Entries:</h4>
+  <h3>
+    <!-- 添加新条目的链接，会跳到添加条目的页面-->
+    <!-- topic.id 指定了后面一列操作的主题ID-->
+    <a href="{% url 'learning_notes:new_entry' topic.id %}">add new entry</a>
+  </h3>
   <!-- 项目列表-->
   <ul>
     {% for entry in entries %}
