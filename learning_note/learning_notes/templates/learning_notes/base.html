@@ -1,10 +1,16 @@
 <!-- 父模板：包含通用元素 -->
 <title>欢迎使用墨眉笔记</title>
-<h1>
+<h2>
   <!-- 超链接到主页下:URL模式r'^$'——view.index——index.html -->
   <a href="{% url 'learning_notes:index' %}">Learning Note</a> -
-  <a href="{% url 'learning_notes:topics' %}">Topics</a>
-</h1>
+  <a href="{% url 'learning_notes:topics' %}">Topics</a> -
+  {% if user.is_authenticated %}
+    Hello, {{ user.username }}.
+  {% else %}
+    <!-- 登陆页面的链接-->
+    <a href="{% url 'users:login' %}">login in</a>
+  {% endif %}
+</h2>
 
 <!-- 块标签,块名content,是一个占位符! 包含的信息由子模板指定-->
 {% block content %}

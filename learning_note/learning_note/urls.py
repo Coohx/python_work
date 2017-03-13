@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # 添加应用程序learning_notes的URL
     url(r'', include('learning_notes.urls', namespace='learning_notes')),
+    # 应用程序users的URL模式,匹配以‘users’打头的URL
+    url(r'^users/', include('users.urls', namespace='users')),
 ]
