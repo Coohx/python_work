@@ -1,0 +1,17 @@
+<!-- 用于编辑条目的表单页面-->
+{% extends "learning_notes/base.html" %}
+
+{% block content %}
+
+  <p><a href="{% url 'learning_notes:topic' topic.id %}">{{ topic }}</a></p>
+
+  <h3>Edit Entry:</h3>
+
+  <form action="{% url 'learning_notes:edit_entry' entry.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">保存变更</button>
+  </form>
+
+{% endblock content %}
+

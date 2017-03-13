@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
-from .models import Topic
+from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
 # Create your views here.
@@ -87,4 +87,33 @@ def new_entry(request, topic_id):
 
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_notes/new_entry.html', context)
+
+def edit_entry(request, entry_id):
+    """
+    编辑既有条目
+        - 针对GET请求，返回一个表单，让用户对条目进行编辑;
+        - 针对POST请求，将修改后的文本保存到数据库中
+    """
+    # 根据URL匹配到的条目ID获取用户要修改的条目对象
+    entry = Entry.objects.get(id=entry_id)
+    # 与要修改的条目关联的主题
+    topic = entry.topic
+
+    # 请求方法为GET
+    if request.method != 'POST':
+        """
+        请求方法为GET，使用既有条目对象的内容创建一个表单，显示给用户，并能
+        够编辑他们
+        """
+        form = EntryForm(instance=entry)
+    else:
+        # POST提交的数据，对数据进行处理
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('learning_notes:topic',
+                                                args=[topic.id]))
+
+    context = {'entry': entry, 'topic': topic, 'form': form}
+    return render(request, 'learning_notes/edit_entry.html', context)
 
