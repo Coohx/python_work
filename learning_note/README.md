@@ -1,11 +1,10 @@
-###墨眉笔记
+墨眉笔记
+---
 
-<br>
 - Web框架: Django
 
 - 数据库: Sqllite3
 
-<br>
 - 项目目录: learning_note
 
 - 应用程序目录:
