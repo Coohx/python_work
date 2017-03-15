@@ -1,10 +1,13 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Topic(models.Model):
     """用户学习笔记的主题"""
     text = models.CharField(max_length=200)
     date_added = models.DateTimeField(auto_now_add=True)
+    # 关联到User表的外键,将主题关联到提交它的用户
+    owner = models.ForeignKey(User)
 
     def __str__(self):
         """返回数据模型的字符串表示"""
@@ -12,7 +15,7 @@ class Topic(models.Model):
         return self.text
 
 class Entry(models.Model):
-    """学习到的有关某个主题的具体知识条目"""
+    """主题下面的条目内容,按添加时间存储在数据库中"""
     # 数据库外键，引用了表Topic中的一条记录，关联到特定的主题
     topic = models.ForeignKey(Topic)
     # TextField()字段不需要长度限制

@@ -1,0 +1,14 @@
+<!-- 新用户注册页面模板-->
+{% extends "learning_notes/base.html" %}
+
+{% block content %}
+
+  <form method="post" action="{% url 'users:register' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name="submit">register</button>
+    <input type="hidden" name="next" value="{% url 'learning_notes:index' %}" />
+  </form>
+
+{% endblock content %}

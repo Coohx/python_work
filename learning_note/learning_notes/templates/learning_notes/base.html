@@ -4,10 +4,15 @@
   <!-- 超链接到主页下:URL模式r'^$'——view.index——index.html -->
   <a href="{% url 'learning_notes:index' %}">Learning Note</a> -
   <a href="{% url 'learning_notes:topics' %}">Topics</a> -
+  <!-- 用户已经登陆-->
   {% if user.is_authenticated %}
     Hello, {{ user.username }}.
+    <!-- 添加注销链接,让每个页面都包含它-->
+    <a href="{% url 'users:logout' %}">log out</a>
+  <!-- 用户没有登录-->
   {% else %}
     <!-- 登陆页面的链接-->
+    <a href="{% url 'users:register' %}">register</a> -
     <a href="{% url 'users:login' %}">login in</a>
   {% endif %}
 </h2>
