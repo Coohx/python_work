@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 第三方应用程序
+    'bootstrap3',
+
     # My apps
     'learning_notes',
-    'users'
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -125,4 +128,10 @@ STATIC_URL = '/static/'
 
 # 用户帐户控制,未登录的用户请求装饰器@login_required的保护页面时,Django将重定向到此URL
 LOGIN_URL = '/users/login/'
+
+# django-bootstrap3的设置
+BOOTSTRAP3 = {
+    # 让bootstrap3包含jQuery
+    'include_jquery': True,
+    }
 
