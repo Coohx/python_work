@@ -1,23 +1,83 @@
-<!-- 父模板：包含通用元素 -->
-<title>欢迎使用墨眉笔记</title>
-<h2>
-  <!-- 超链接到主页下:URL模式r'^$'——view.index——index.html -->
-  <a href="{% url 'learning_notes:index' %}">Learning Note</a> -
-  <a href="{% url 'learning_notes:topics' %}">Topics</a> -
-  <!-- 用户已经登陆-->
-  {% if user.is_authenticated %}
-    Hello, {{ user.username }}.
-    <!-- 添加注销链接,让每个页面都包含它-->
-    <a href="{% url 'users:logout' %}">log out</a>
-  <!-- 用户没有登录-->
-  {% else %}
-    <!-- 登陆页面的链接-->
-    <a href="{% url 'users:register' %}">register</a> -
-    <a href="{% url 'users:login' %}">login in</a>
-  {% endif %}
-</h2>
+<!-- 加载django-bootstrap3中的模板标签集 -->
+{% load bootstrap3 %}
 
-<!-- 块标签,块名content,是一个占位符! 包含的信息由子模板指定-->
-{% block content %}
-{% endblock content %}
+<!-- 声明此文件的类型为html文档; 使用英语(en) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- title元素,指定浏览器标题栏显示的内容 -->
+    <title>墨眉笔记</title>
+  
+    <!-- django-bootstrap3的自定义模板标签,让Django包含所有的Bootstrap样式文件-->
+    {% bootstrap_css %}
+    <!-- 此标签启动交互式行为-->
+    {% bootstrap_javascript %}
+
+  </head>
+  <body>  
+    <!-- Static top navnar -->
+    <!-- nav元素,表示页面的导航链接部分 -->
+    <!-- class指定了选择器(selector),选择器规定了<nav>元素内的内容的样式规则,
+     决定了特定样式规则将应用于页面上的哪些元素 -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <!-- 放置页面内容的容器 -->
+      <div class="container">
+
+          <div class="navbar-header">
+            <!-- 导航栏转换折叠按钮,在浏览器窗口较小或者移动设备上显示网站时,
+             collapsed会使导航栏折叠起来 -->
+            <button type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+            </button>
+            <!-- 导航栏最左边显示项目名(相当于导航栏商标),并将其设置为到主页的链接 -->
+            <a class="navbar-brand" href="{% url 'learning_notes:index' %}">墨眉笔记</a>
+          </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <!-- 导航栏:<ul>列表,列表项(<li>)由多个链接组成-->
+            <ul class="nav navbar-nav">
+              <!-- 列表项:是一个链接 -->
+              <li><a href="{% url 'learning_notes:topics' %}">Topics</a></li>
+            </ul>
+            
+            <!-- 选择器navbar-right设置一组链接的样式,使其出现在导航栏右边 -->
+            <ul class="nav navbar-nav navbar-right">
+              <!-- 用户已经登陆 -->
+              {% if user.is_authenticated %}
+                <!-- 添加注销链接,让每个页面都包含它 -->
+                <li><a>Hello, {{ user.username }}.</a></li>
+                <li><a href="{% url 'users:logout' %}">log out</a></li>
+              <!-- 用户没有登录 -->
+              {% else %}
+                <!-- 登陆页面的链接 -->
+                <li><a href="{% url 'users:register' %}">register</a></li>
+                <li><a href="{% url 'users:login' %}">login in</a></li>
+              {% endif %}
+            </ul>
+          </div><!-- /.nav-collapse -->
+
+      </div>
+    </nav>
+
+    <!-- 一个div容器,包含两个元素 -->
+    <div class="container">
+
+      <!-- class属性值page-header将一系列样式应用到这个块 -->
+      <div class="page-header">
+        <!-- header块告诉页面的信息以及可执行的操作 -->
+        {% block header %}{% endblock header %}
+      </div>
+      <div>
+        {% block content %}{% endblock content %}
+      </div>
+
+    </div><!-- /container -->
+  
+  </body>
+</html>
 

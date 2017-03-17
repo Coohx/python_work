@@ -1,19 +1,26 @@
 <!-- Django默认视图login的模板-->
 {% extends "learning_notes/base.html" %}
+<!-- 加载bootstrap3模板标签 -->
+{% load bootstrap3 %}
+
+<!-- header块, 描述页面的作用 -->
+{% block header %}
+  <h2>Log in to your account.</h2>
+{% endblock header %}
+
 
 {% block content%}
-  
-  <!-- 表单的errors属性被设置时，显示一条错误信息-->
-  {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}
 
   <!-- 让登陆视图login处理表单-->
-  <form method="post" action="{% url 'users:login' %}">
+  <form method="post" action="{% url 'users:login' %}" class="form">
     {% csrf_token %}
-    {{ form.as_p }}
+    <!-- -->
+    {% bootstrap_form form %}
     
-    <button name="submit">log in</button>
+    {% buttons %}
+      <button name="submit" class="btn btn-primary">log in</button>
+    {% endbuttons %}
+
     <!-- 隐藏的表单元素,名为next. 实参value指定用户登录成功后将其重定向到哪个页面-->
     <input type="hidden" name="next" value="{% url 'learning_notes:index' %}" />
   </form>

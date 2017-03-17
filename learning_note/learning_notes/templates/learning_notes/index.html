@@ -1,7 +1,24 @@
 <!-- 父模板base.html链接到index.html -->
 {% extends "learning_notes/base.html" %}
 
+{% block header %}
+  <!-- jumbotron元素生成一个大框 -->
+  <div class='jumbotron'>
+    <h2>开始记录你的工作吧!</h2>
+  </div>
+  <div class='jumbotron'>
+    <h2>Track your learning.</h2>
+  </div>
+{% endblock header %}
+
 <!-- 子模板只需包含当前网页特有的内容 -->
 {% block content %}
-  <h3>Learning Notes helps you keep track of your learning, for any topic you're learning about.</h3>
+  <h3>
+    <a href="{% url 'users:register' %}">Register an account</a> to make your
+    own learning notes, and list the topics you're learning about.
+  </h3>
+  <h3>
+    Whenever you learn somthing new about a topic, make an entry summarizing
+    what you've learned.
+  </h3>
 {% endblock content %}
