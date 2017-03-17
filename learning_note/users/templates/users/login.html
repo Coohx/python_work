@@ -1,4 +1,4 @@
-<!-- Django默认视图login的模板-->
+<!-- Django默认视图函数login()的模板-->
 {% extends "learning_notes/base.html" %}
 <!-- 加载bootstrap3模板标签 -->
 {% load bootstrap3 %}
@@ -11,14 +11,16 @@
 
 {% block content%}
 
-  <!-- 让登陆视图login处理表单-->
+  <!-- 让登陆视图login处理表单数据 -->
   <form method="post" action="{% url 'users:login' %}" class="form">
+    <!-- django-bootstrap3会自动管理表单错误 -->
     {% csrf_token %}
-    <!-- -->
+    <!-- 下面的模板标签用来显示表单数据,将Bootstrap样式规则应用于各个表单元素 -->
     {% bootstrap_form form %}
     
+    <!-- 将bootstrap样式应用于按钮 -->
     {% buttons %}
-      <button name="submit" class="btn btn-primary">log in</button>
+      <button name="submit" class="btn btn-primary">登录</button>
     {% endbuttons %}
 
     <!-- 隐藏的表单元素,名为next. 实参value指定用户登录成功后将其重定向到哪个页面-->

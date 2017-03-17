@@ -1,18 +1,25 @@
 <!-- 用于添加新条目的模板-->
 {% extends "learning_notes/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h3>在这里为你的主题添加新的内容:</h3>
+  <!-- 当前所添加的条目所属的主题，设置为链接,可返回该主题的主页面-->
+  <p>返回当前主题:<a href="{% url 'learning_notes:topic' topic.id %}">{{ topic }}</a></p>
+{% endblock header %}
 
 {% block content %}
 
-  <!-- 当前所添加的条目所属的主题，设置为链接,可返回该主题的主页面-->
-  <p><a href="{% url 'learning_notes:topic' topic.id %}">{{ topic }}</a></p>
-
-  <h3>Add a new  entry</h3>
   <!-- 指定将提交的条目数据传递给那个视图函数进行处理-->
   <!-- topic.id用于关联正确的主题-->
-  <form action="{% url 'learning_notes:new_entry' topic.id %}" method='post'>
+  <form action="{% url 'learning_notes:new_entry' topic.id %}" method='post' class="form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button name='submit'>添加条目</button>
+    <!-- 使用Bootstrap样式设置表单元素 -->
+    {% bootstrap_form form %}
+    
+    {% buttons %}
+      <button name="submit" class="btn btn-primary">添加新内容</button>
+    {% endbuttons %}
   </form>
 
 {% endblock content%}

@@ -1,18 +1,24 @@
 {% extends "learning_notes/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h3>新建一个你自己的主题:</h3>
+{% endblock header %}
 
 {% block content %}
-  <h3>Add a new topic:</h3>
   
   <!-- 实参action指定了将提交的表单数据发送到视图函数new_topic\
     实参method指定浏览器提交数据的请求方法使用POST-->
-  <form action="{% url 'learning_notes:new_topic' %}" method='post'>
+  <form action="{% url 'learning_notes:new_topic' %}" method='post' class="form">
     <!-- 防止攻击者利用表单获得对服务器未经授权的访问，即跨站请求伪造-->
     {% csrf_token %}
-    <!-- Django使用此模板变量自动创建显示表单(form)所需的全部字段。修饰符
-      as_p 让Django以段落格式渲染所有表单元素-->
-    {{ form.as_p }}
-    <button name="submit">添加主题</button>
+    <!-- 使用bootstrap3样式设置表单元素 -->
+    {% bootstrap_form form %}
+
+    <!-- 使用bootstrap3结构定义提交按钮 -->
+    {% buttons %}
+      <button name="submit" class="btn btn-primary">添加新主题</button>
+    {% endbuttons %}
   </form>
 
 {% endblock content %}
-

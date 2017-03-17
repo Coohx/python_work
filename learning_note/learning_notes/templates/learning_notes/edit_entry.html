@@ -1,16 +1,24 @@
 <!-- 用于编辑条目的表单页面-->
 {% extends "learning_notes/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h3>修改后请单击保存按钮进行保存</h3>
+  <p>返回当前条目:<a href="{% url 'learning_notes:topic' topic.id %}">{{ topic }}</a></p>
+{% endblock header %}
 
 {% block content %}
 
-  <p><a href="{% url 'learning_notes:topic' topic.id %}">{{ topic }}</a></p>
-
-  <h3>Edit Entry:</h3>
-
-  <form action="{% url 'learning_notes:edit_entry' entry.id %}" method='post'>
+  <form action="{% url 'learning_notes:edit_entry' entry.id %}" method='post' class="form">
+    
+    <!-- 将bootstrap样式应用到列表元素 -->
     {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">保存变更</button>
+    {% bootstrap_form form %}
+
+    {% buttons %}
+      <button name="submit" class="btn btn-primary">保存</button>
+    {% endbuttons %}
+
   </form>
 
 {% endblock content %}

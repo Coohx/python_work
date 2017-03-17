@@ -1,29 +1,34 @@
 {% extends 'learning_notes/base.html' %}
 
+{% block header %}
+  <h2>{{ topic }}</h2>
+{% endblock header %}
+
 {% block content %}
-  <!-- 双花括号用于引用变量  -->
-  <h3>Topic: {{ topic }}</h3>
+  <p>
+    <a href="{% url 'learning_notes:new_entry' topic.id %}">添加新的条目</a>
+  </p>
+ 
+  {% for entry in entries %}
+  <!-- bootstrap面板,是一个带预定义样式的div -->
+  <div class="panel panel-default">
+    <!-- 面板标题 -->
+    <div class="panel-heading">
+      <h3>
+        {{ entry.date_added|date:'M d, Y H:i' }}
+        <small> <!-- small标签使元素变小 -->
+          <a href="{% url 'learning_notes:edit_entry' entry.id %}">编辑</a>
+        </small>
+      </h3>
+    </div>
 
-  <h4>Entries:</h4>
-  <h3>
-    <!-- 添加新条目的链接，会跳到添加条目的页面-->
-    <!-- topic.id 指定了后面一列操作的主题ID-->
-    <a href="{% url 'learning_notes:new_entry' topic.id %}">add new entry</a>
-  </h3>
-  <!-- 项目列表-->
-  <ul>
-    {% for entry in entries %}
-      <li>
-        <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
-        <p>{{ entry.text|linebreaks }}</p>
-        <p>
-          <a href="{% url 'learning_notes:edit_entry' entry.id %}">edit entry</a>
-        </p>
-      </li>
-    {% empty %}
-      <li>There are no entries for this topic yet.</li>
-    {% endfor %}
-  </ul>
-
+    <!-- 面板主体 -->
+    <div class="panel-body">
+      {{ entry.text|linebreaks }}
+    </div>
+  </div> <!-- panel -->
+  {% empty %}
+    There are no entries for this topic yet.
+  {% endfor %}
 
 {% endblock content %}
