@@ -38,7 +38,7 @@ def topics(request):
 def topic(request, topic_id):
     """
     显示单个主题及其所有的条目
-    接受正则表达式(?P<topic_id>\d+)捕获的id,存储到topic_id中
+    接受正则表达式(?P<topic_id>\d+)捕获的id,存在topic_id中
     """
     topic = Topic.objects.get(id=topic_id)
     # 确认请求的主题属于当前用户
