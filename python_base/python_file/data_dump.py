@@ -1,5 +1,5 @@
-#! /usr/bin/python3
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
+# -*- coding: utf-8  -*-
 # Date: 2016-12-23
 # json模块
 
