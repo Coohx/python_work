@@ -8,4 +8,3 @@
 
 - learning_note: A Python Web project.
 
-- Testing...
