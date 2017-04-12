@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import matplotlib.pyplot as plt
+
+from random_walk import RandomWalk
+
+# 只要程序处于活动状态,就不断模拟随机漫步
+while True:
+    # 创建一个RandomWalk实例,生成数据
+    rw = RandomWalk()
+    rw.fill_walk()
+
+    # 列表用于颜色映射，包含各点的先后顺序
+    point_numbers = list(range(rw.num_max_points))
+    #point_numbers = rw.x_values
+
+    # 给各个点着色，反应它们的先后顺序
+    plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues,
+                edgecolor='none', s=5)
+    # Display a figure
+    plt.show()
+
+    keep_running = input("Make another walk? (y/n): ")
+    if keep_running == 'n':
+        break
+
