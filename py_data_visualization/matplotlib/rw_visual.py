@@ -14,6 +14,7 @@ while True:
     # 列表用于颜色映射，包含各点x行走的先后顺序
     point_numbers = list(range(rw.num_max_points))
     # 给各个点着色，反应它们的先后顺序
+    # 参数C赋值为一个列表,包含各点的先后顺宇
     plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues,
                 edgecolor='none', s=1)
 

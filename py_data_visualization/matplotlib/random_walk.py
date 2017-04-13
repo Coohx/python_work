@@ -5,7 +5,7 @@ r"""
     - 列表1: 存储随机漫步经过的每个点的x坐标
     - 列表2: 存储随机漫步经过的每个点的y坐标
 """
-# 使用choice()行走做出选择
+# choice(seqs)从序列seqs中随机选取一个随机数
 from random import choice
 
 class RandomWalk():
@@ -26,7 +26,7 @@ class RandomWalk():
         # 不断漫步,直到漫步包含所需数量的点
         while len(self.x_values) < self.num_max_points:
             # 决定前进方向以及这个方向前进的距离
-            # 1,向右 -1,向左
+            # 1,向右 -1,向左，choice()随机给出1或-1
             x_direction = choice([1, -1])
             # 随机选择0~4之间的整数,给出行走距离
             x_distance = choice([0, 1, 2, 3, 4])
