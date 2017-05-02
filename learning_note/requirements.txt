@@ -1,0 +1,3 @@
+############### virtualenv dependencies.##############
+Django
+django-bootstrap3

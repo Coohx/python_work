@@ -12,4 +12,4 @@
 
   > users: 处理用户帐户相关的所有功能
 
-- 前段框架: Bootstrap3
+- 前端框架: Bootstrap3
