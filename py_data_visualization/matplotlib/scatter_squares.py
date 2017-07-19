@@ -11,7 +11,7 @@ y_values = [x**2 for x in x_values]
 # 参数edgecolor='none'删除数据点的轮廓
 # 参数c指定点的颜色
 #plt.scatter(x_values, y_values, c='red', edgecolor='none', s=10)
-#plt.scatter(x_values, y_values, c=(0, 0.3, 0i.6), edgecolor='none', s=10)
+#plt.scatter(x_values, y_values, c=(0, 0.3, 01.6), edgecolor='none', s=10)
 
 # 参数c设置为一个y值列表(y值较小的点为浅蓝色,较大的点为深蓝色),参数cmap告诉pyplot使用哪个颜色映射
 plt.scatter(x_values, y_values, c=y_values, cmap=plt.cm.GnBu,

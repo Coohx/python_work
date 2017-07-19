@@ -8,7 +8,7 @@ from die import Die
 # 创建一个骰子
 die = Die()
 
-# 存储投掷骰子的结果
+# 存储掷骰子的结果
 results = []
 for roll_num in range(1000):
     result = die.roll()
@@ -32,7 +32,7 @@ hist.x_labels = map(str, range(1, 7))
 hist.x_title = "点数"
 hist.y_title = "每个点数出现的次数"
 
-# 指定值的标签, 要绘图的值
+# 指定值的标签, 要绘图的值"列表frequencies"
 hist.add('6面骰子', frequencies)
 # 将图表渲染为一个SVG文件
 hist.render_to_file('die_visual.svg')

@@ -25,4 +25,5 @@ urlpatterns = [
     # 用于编辑条目的页面的URL模式
     url(r'^edit_entry/(?P<entry_id>\d+)/$', views.edit_entry,
         name='edit_entry'),
+    #url(r'^site_media/(?P<path>.*)', 'django.views.static.serve',)
 ]

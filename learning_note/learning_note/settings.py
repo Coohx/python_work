@@ -25,7 +25,7 @@ SECRET_KEY = 'xribqjvbni84npx0c#sk%f65zfsb!!+=h2i&=6h3d4$c4z=&yf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.9.37', '192.168.88.111']
+ALLOWED_HOSTS = ['192.168.9.37', '151792t2j5.iok.la']
 
 
 # Application definition
@@ -36,10 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # django静态文件app
     'django.contrib.staticfiles',
 
     # 第三方应用程序
     'bootstrap3',
+    'svg',
 
     # My apps
     'learning_notes',

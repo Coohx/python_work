@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
     <!-- title元素,指定浏览器标题栏显示的内容 -->
-    <title>墨眉笔记</title>
+    <title>宝贝,我爱你(520)</title>
   
     <!-- django-bootstrap3的自定义模板标签,让Django包含所有的Bootstrap样式文件-->
     {% bootstrap_css %}
@@ -27,7 +27,7 @@
       <!-- 放置页面内容的容器 -->
       <div class="container">
 
-          <div class="navbar-header">
+          <div class="navbar-header" style="background:#FF5151;color:#FFFFFF">
             <!-- 导航栏转换折叠按钮,在浏览器窗口较小或者移动设备上显示网站时,
              collapsed会使导航栏折叠起来 -->
             <button type="button" class="navbar-toggle collapsed"
@@ -35,14 +35,16 @@
                 aria-expanded="false" aria-controls="navbar">
             </button>
             <!-- 导航栏最左边显示项目名(相当于导航栏商标),并将其设置为到主页的链接 -->
-            <a class="navbar-brand" href="{% url 'learning_notes:index' %}">墨眉笔记</a>
+            <!-- <a class="navbar-brand" href="{% url 'learning_notes:index' %}">墨眉笔记</a> -->
+            <a class="navbar-brand" href="{% url 'learning_notes:index' %}">520专属——亲爱的宝贝.</a>
           </div>
 
           <div id="navbar" class="navbar-collapse collapse">
             <!-- 导航栏:<ul>列表,列表项(<li>)由多个链接组成-->
             <ul class="nav navbar-nav">
               <!-- 列表项:是一个链接 -->
-              <li><a href="{% url 'learning_notes:topics' %}">Topics</a></li>
+              <!-- <li><a href="{% url 'learning_notes:topics' %}">Topics</a></li> -->
+              <li><a href="{% url 'learning_notes:topics' %}">937</a></li>
             </ul>
             
             <!-- 选择器navbar-right设置一组链接的样式,使其出现在导航栏右边 -->
@@ -55,8 +57,10 @@
               <!-- 用户没有登录 -->
               {% else %}
                 <!-- 登陆页面的链接 -->
-                <li><a href="{% url 'users:register' %}">register</a></li>
-                <li><a href="{% url 'users:login' %}">login in</a></li>
+                <!-- <li><a href="{% url 'users:register' %}">register</a></li>
+                <li><a href="{% url 'users:login' %}">login in</a></li> -->
+                <li><a href="{% url 'users:register' %}">520</a></li>
+                <li><a href="{% url 'users:login' %}">merlin</a></li>
               {% endif %}
             </ul>
           </div><!-- /.nav-collapse -->
