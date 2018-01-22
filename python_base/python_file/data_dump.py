@@ -96,14 +96,14 @@ greet_user()
 
 def favorite_number():
     """存储你喜欢的数字"""
-    num_file = r'..\text_files\numbers.json'
+    num_file = r'../text_files/numbers.json'
     favor_num = input("Enter a number that is your favorite. ")
     with open(num_file, 'w') as f_obj:
         json.dump(favor_num, f_obj)
 
 def read_favor_number():
     """读取用户最喜欢的数字"""
-    num_file = r'..\text_files\numbers.json'
+    num_file = r'../text_files/numbers.json'
     try:
         with open(num_file) as f_obj:
             favor_num = json.load(f_obj)

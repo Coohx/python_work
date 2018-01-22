@@ -52,7 +52,7 @@ print(add_end())
 def make_pizza(*toppings):
     """打印顾客点的所有配料"""
     print(toppings)
-# pepperoni 意大利香肠  cheese 奶酪  
+# pepperoni 意大利香肠  cheese 奶酪
 make_pizza('pepperoni')
 make_pizza('mushrooms', 'green peppers', 'extra cheese')
 # 0 个参数

@@ -66,7 +66,7 @@ else:
     status = '严重肥胖'
 print('Xiao Ming BMI is: %.2f,%s!' % (bmi, status))
 
-# 关键字in 
+# 关键字in
 requested_toppings = ['mushroom', 'onions', 'pineapple']
 print('mushroom' in requested_toppings)
 

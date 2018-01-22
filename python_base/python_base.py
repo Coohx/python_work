@@ -1,8 +1,8 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Author：Huang Xin   
+# Author：Huang Xin
 # Date：2016-12-02
 # 基础练习
-
 
 # Python syntax is indentation(tab = 4)
 # Python 使用井号作为注释符(#)
@@ -39,4 +39,9 @@ age = input('How old are you? ')
 age = int(age)
 if age >= 18:
     print('Welcome, Adult!')
-
+else:
+    print('Using python, you can fly!')
+print(r'''
+     instance
+     keep doing!
+     three starts!''')
