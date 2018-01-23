@@ -1,6 +1,6 @@
 ### 墨眉笔记
 
-- Web框架: Django
+- Web框架: Django1.1
 
 - 数据库: Sqllite3
 
