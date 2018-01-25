@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # 函数参数
 
@@ -32,7 +33,7 @@ describe_pet(pet_name = 'harry', animal_type = 'hamster')
 describe_pet(animal_type = 'hamster', pet_name = 'harry')
 
 
-# 默认参数的大坑——默认值为可变对象引起的
+# 默认参数的大坑 -- 默认值为可变对象时引起的
 # 默认值为一个列表（可变数据对象）
 def add_end(l=[]):
     l.append('end')
@@ -40,7 +41,7 @@ def add_end(l=[]):
 
 # 提供实参，覆盖默认值
 print(add_end([1, 2, 3]))
-# 使用默认值时出现”坑“
+# 使用默认值时出现"坑"
 print(add_end())
 print(add_end())
 # 连续多次调用，默认值被修改掉，因为它(列表)是一个可变的对象
@@ -48,7 +49,7 @@ print(add_end())
 
 
 # 可变数量的参数
-# *toppings 实际是一个空元组
+# toppings 实际是一个空元组,由*声明
 def make_pizza(*toppings):
     """打印顾客点的所有配料"""
     print(toppings)
@@ -79,7 +80,7 @@ make_pizza(*toppings_owned)
 
 
 # 关键字参数 key-value
-# 用两个星号(**)标识关键字参数kw,kw是一个空字典
+# 用两个星号(**)声明关键字参数kw,kw是一个空字典
 def person(name, age, **kw):
     """打印个人信息"""
     print('name:', name, 'age:', age, 'other:', kw)
@@ -114,7 +115,7 @@ person('Jack', 24, city = 'BeiJing', job = 'Engineer')
 person('Jack', 24, job = 'Engineer', city = 'BeiJing')
 
 
-# 可变数量的参数后面的 命名关键字参数 不需要星号(*)分隔
+# 可变数量的参数后面的 命名关键字参数 不需要星号(*)声明
 def person(name, age, *args, city, job):
     print(name, age, args, city, job)
 
@@ -135,11 +136,11 @@ person('Jack', 34, job = 'Ops')
 # 定义顺序：必选参数、默认参数、可变参数、命名关键字参数、关键字参数
 
 # 位置参数a、b  默认参数c   可变参数args  关键字参数kw
-def f1(a, b, c = 0, *args, **kw):
+def f1(a, b, c=0, *args, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
 
 # 位置参数a、b  默认参数c   命名关键词参数d  关键字参数kw
-def f2(a, b, c = 0, *, d, **kw):
+def f2(a, b, c=0, *, d, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
 
 # Python 自动按照参数位置和参数名把对应的实参传进去
@@ -147,7 +148,7 @@ def f2(a, b, c = 0, *, d, **kw):
 f1(1, 2)
 # a = 1 b = 2 c = 0 args = () kw = {}
 
-# 默认参数c被调用时提供的实参覆盖
+# 默认参数c调用时被提供的实参覆盖
 f1(1, 2, c = 3)
 # a = 1 b = 2 c = 3 args = () kw = {}
 
@@ -178,3 +179,4 @@ kw = {'d': 88, 'x': '#'}
 # 元组和字典元素按顺序传入，被相应的形参接收
 f2(*args, **kw)
 # a = 1 b = 2 c = 3 d = 88 kw = {'x': '#'}
+
