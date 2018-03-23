@@ -7,6 +7,7 @@ def hanoi(n, starting_point='a', transfer='b', destination='c'):
     n = int(n)
     if n == 1:
         print(starting_point, '-->', destination)
+        return
     else:
         # 大于一个盘子时,将最下面的一个盘子和上面的n-1个盘子看成两个盘子即可
         # 第一步,将上面的n-1个盘子从a借助c移动到b上面
