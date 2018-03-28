@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 def greet_users(names):
@@ -19,7 +20,7 @@ def print_models(unprinted_designs, completed_models):
     """
     while unprinted_designs:
         current_design = unprinted_designs.pop()
-        
+
         # 模拟3D模型打印过程
         print("Printing model: " + current_design)
         completed_models.append(current_design)
@@ -63,7 +64,7 @@ def build_profile(first, last, **user_info):
     # 将用户的姓&名加入到字典中
     profile['first_name'] = first
     profile['last_name'] = last
-    
+
     # 遍历字典user_info中的键-值对
     for key, value in user_info.items():
         profile[key] = value
