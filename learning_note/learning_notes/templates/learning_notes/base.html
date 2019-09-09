@@ -37,7 +37,6 @@
             </button>
             <!-- 导航栏最左边显示项目名(相当于导航栏商标),并将其设置为到主页的链接 -->
             <a class="navbar-brand" href="{% url 'learning_notes:index' %}">墨眉笔记</a>
-            <!-- <a class="navbar-brand" href="{% url 'learning_notes:index' %}">520专属——亲爱的宝贝.</a> -->
           </div>
 
           <div id="navbar" class="navbar-collapse collapse">
@@ -45,7 +44,6 @@
             <ul class="nav navbar-nav">
               <!-- 列表项:是一个链接 -->
               <li><a href="{% url 'learning_notes:topics' %}">Topics</a></li>
-              <!-- <li><a href="{% url 'learning_notes:topics' %}">937</a></li> -->
             </ul>
             
             <!-- 选择器navbar-right设置一组链接的样式,使其出现在导航栏右边 -->
@@ -60,7 +58,6 @@
                 <!-- 登陆页面的链接 -->
                 <li><a href="{% url 'users:register' %}">register</a></li>
                 <li><a href="{% url 'users:login' %}">login in</a></li>
-                <!-- <li><a href="{% url 'users:register' %}">520</a></li>
                 <li><a href="{% url 'users:login' %}">merlin</a></li> -->
               {% endif %}
             </ul>
